@@ -1,0 +1,27 @@
+<html ng-app="phpAngular">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <script src="lib/jquery-1.11.1.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  
+	<title>easy php angular</title>
+</head>
+<body>
+  <!-- angular module -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-route.min.js"></script>
+  
+  <!-- app -->
+  <script src="index.js"></script>
+  
+  <!-- main -->
+  <script src="js/main/directive/MainDirective.js"></script>
+  <script src="js/main/service/MainService.js"></script>
+  <script src="js/main/controller/MainController.js"></script>
+  
+  <div ng-view></div>
+</body>
+</html>
