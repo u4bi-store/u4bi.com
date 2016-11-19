@@ -1,1 +1,7 @@
-layout A
+<div id=wrap>
+  <div id=cont>
+    <figure ng-repeat="x in href">
+      <a class="btn number" ng-href="{{x.path}}" target="_blank">{{x.name}}</a>
+    </figure>
+  </div>
+</div>
