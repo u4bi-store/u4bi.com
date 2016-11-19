@@ -32,4 +32,5 @@ body{
   border : 1px solid rgba(240, 248, 255, 1);
   background:rgba(240, 248, 255, 0.2);
   color: rgba(240, 248, 255, 1);
+  font-weight:bold;
 }
