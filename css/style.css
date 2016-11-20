@@ -54,7 +54,7 @@ h1{
 .btn{
   text-decoration:none;
   font-size:2rem;
-  color: rgba(240, 248, 255, 1);
+  color: rgba(240, 248, 255, 1) !important;
   padding:10px 20px 10px 20px;
   margin:10px;
   transition:all 0.1s;
@@ -70,16 +70,14 @@ h1{
 
 .btn.rank{
   background-color: #4080ff;
-  border-bottom:3px solid rgba(0,0,0,0);
 }
 
 .btn:visited{
     color: rgba(240, 248, 255, 1);
 }
 
-.btn.number:hover, .btn.rank:hover{
+.btn.number:hover{
   border-bottom: 3px solid rgba(240, 248, 255, 1);
-  color: rgba(240, 248, 255, 1);
 }
 
 .btn.number:hover{
@@ -87,4 +85,5 @@ h1{
 }
 
 .btn.rank:hover{
+  font-size:3rem;
 }

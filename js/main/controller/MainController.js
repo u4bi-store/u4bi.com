@@ -5,7 +5,7 @@ function MainController($scope, $anchorScroll, $location, MainService){
     init();
     function init(){
       console.log('ok 200');
-      hrefAPI();
+      dataAPI();
       $scope.showBtn = function(name){
         $scope.type=name;
         $location.hash('game-wrap');
@@ -16,13 +16,14 @@ function MainController($scope, $anchorScroll, $location, MainService){
       };
     }
   
-    function hrefAPI(){
-      MainService.json('model/main/href-api.php').then(function(data){
+    function dataAPI(){
+      MainService.json('model/main/data-api.php').then(function(data){
         
-        data = MainService.suf(data);
+        data.href = MainService.suf(data.href);
         
         console.log(data);
-        $scope.href =data;
+        $scope.href =data.href;
+        $scope.game =data.game;
       });
     }
 }
