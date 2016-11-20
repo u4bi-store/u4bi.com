@@ -1,3 +1,10 @@
-<div id="game-wrap">
-  <div game-wrap type="game"></div>
+<div id="game-wrap" ng-switch="type">
+  <div game-wrap type="rank" ng-switch-when="rank"></div>
+  <div game-wrap type="over" ng-switch-when="over"></div>
+  <div game-wrap type="music" ng-switch-when="music"></div>
+  <div game-wrap type="food" ng-switch-when="food"></div>
+  <div game-wrap type="dice" ng-switch-when="dice"></div>
+  <div game-wrap type="radder" ng-switch-when="radder"></div>
+  <div game-wrap type="shot" ng-switch-when="shot"></div>
+  <div game-wrap type="default" ng-switch-default></div>
 </div>

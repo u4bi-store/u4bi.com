@@ -6,6 +6,9 @@ function MainController($scope, MainService){
     function init(){
       console.log('ok 200');
       hrefAPI();
+      $scope.showBtn = function(name){
+        $scope.type=name; 
+      };
     }
   
     function hrefAPI(){
