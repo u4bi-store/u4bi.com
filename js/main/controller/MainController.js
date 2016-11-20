@@ -1,13 +1,15 @@
 app.controller('MainController', MainController);
 
-function MainController($scope, MainService){
+function MainController($scope, $anchorScroll, $location, MainService){
 
     init();
     function init(){
       console.log('ok 200');
       hrefAPI();
       $scope.showBtn = function(name){
-        $scope.type=name; 
+        $scope.type=name;
+        $location.hash('game-wrap');
+        $anchorScroll();
       };
       $scope.suf = function(){
         $scope.href = MainService.suf($scope.href);
