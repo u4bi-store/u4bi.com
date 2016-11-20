@@ -14,6 +14,12 @@ function MainController($scope, $anchorScroll, $location, MainService){
       $scope.suf = function(){
         $scope.href = MainService.suf($scope.href);
       };
+      $scope.overAPI = function(name, tagnum){
+        MainService.json('https://api.overwatchinfo.com/pc/kr/'+name+'-'+tagnum+'/profile').then(function(data){
+          console.log(JSON.stringify(data));
+          $scope.over = data;
+        });
+      };
     }
   
     function dataAPI(){

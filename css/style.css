@@ -87,3 +87,21 @@ h1{
 .btn.rank:hover{
   font-size:3rem;
 }
+
+/* game*/
+#over-game{
+  color:#fff;
+  font-size:1.5rem;
+  width:100%;
+  height:100%;
+  display:inline-block;
+}
+#over-logo{
+  width:40%;
+  height:20%;
+}
+
+.over-border{
+  float: left;
+  width:33%;
+}

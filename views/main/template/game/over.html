@@ -1,3 +1,40 @@
 <div id="game-notice">
-  <h1>오버워치 전적표가 나온다.</h1>
+  <div id="over-game">
+    <img id="over-logo" src="http://i65.tinypic.com/t0mbdg.png">
+    <p>배틀태그 : <input type "text" ng-model="name"></p>
+    <p>태그넘버 : <input type "text" ng-model="tagnum">
+        <button ng-click="overAPI(name,tagnum)">조회</button>
+    </p>
+    
+    <div class="over-border">
+      <p><img ng-src="{{over.data.avatar}}"></p>
+      <p>이름 : {{over.data.username}}</p>
+      <p>레벨 : {{over.data.level}}</p>
+      <p>총 승리한 게임 : {{over.data.total_wins}}</p>
+    </div>
+    <div class="over-border">
+      <p>빠른대전</p>
+      <p>플레이시간 : {{over.data.quick_play.time_played}}</p>
+      <p>폭주시간 : {{over.data.quick_play.time_on_fire}}</p>
+      <p>임무기여시간 : {{over.data.quick_play.objective_time}}</p>
+      <p>상위 영웅</p>
+      <p>1위 : {{over.data.quick_play.hero1}}</p>
+      <p>2위 : {{over.data.quick_play.hero2}}</p>
+      <p>3위 : {{over.data.quick_play.hero3}}</p>
+    </div>
+    <div class="over-border">
+      <p>경쟁전</p>
+      <p>랭크 : {{over.data.competitive_play.rank}}</p>
+      <p>승리 : {{over.data.competitive_play.wins}}</p>
+      <p>패배 : {{over.data.competitive_play.loss}}</p>
+      <p>치룬 경기 : {{over.data.competitive_play.games_played}}</p>
+      <p>플레이시간 : {{over.data.competitive_play.time_played}}</p>
+      <p>폭주시간 : {{over.data.competitive_play.time_on_fire}}</p>
+      <p>임무기여시간 : {{over.data.competitive_play.objective_time}}</p>
+      <p>상위 영웅</p>
+      <p>1위 : {{over.data.competitive_play.hero1}}</p>
+      <p>2위 : {{over.data.competitive_play.hero2}}</p>
+      <p>3위 : {{over.data.competitive_play.hero3}}</p>
+    </div>
+  </div>
 </div>
