@@ -2,14 +2,15 @@
 body{
   background: url(http://www.ilikewallpaper.net/iphone-6-wallpapers/download/27820/iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg) no-repeat fixed 0 0 / cover;
 }
-#wrap{ width:80%; margin: 0 auto;}
 #cont{
-  column-width:150px;
+  width:80%;
+  margin: 0 auto;
+  column-width:135px;
   column-gap:0;
 }
 #cont figure{
-  margin:0px;
-  padding:0px;
+  margin:0;
+  padding:0;
 }
 .btn{
   text-decoration:none;
