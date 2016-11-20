@@ -1,5 +1,6 @@
 @media (max-width: 540px){
-    #cont { display: none ;}
+  #cont {display:none;}
+  #game-wrap, #game-notice{ height:400px !important;}
 }
 /* body */
 body{
