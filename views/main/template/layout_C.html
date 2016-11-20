@@ -1,12 +1,7 @@
 <div id="fb-wrap" align="center">
-  <button id="rank-mobail" class="btn rank" ng-click="showBtn('rank')">게임 순위보기</button>
-  <span id="fb-cont">
-    <button class="btn rank" ng-click="showBtn('over')">오버워치 전적</button>
-    <button class="btn rank" ng-click="showBtn('music')">코딩용 음악</button>
-    <button class="btn rank" ng-click="showBtn('food')">오늘 뭐먹지</button>
-    <button class="btn rank" ng-click="showBtn('dice')">운명의 주사위</button>
-    <button class="btn rank" ng-click="showBtn('radder')">홀짝 사다리</button>
-    <button class="btn rank" ng-click="showBtn('shot')">샷감 연습</button>
+  <span ng-repeat="x in game">
+    <button ng-if="x.name == game[0].name" class="btn rank mobail" ng-click="showBtn(x.path)">{{x.name}}</button>
+    <button ng-if="x.name != game[0].name" class="btn rank web" ng-click="showBtn(x.path)">{{x.name}}</button>
   </span>
   <div class="fb-comments" data-href="https://www.facebook.com/ymjcode" data-numposts="3"></div>
 </div>

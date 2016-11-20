@@ -1,8 +1,8 @@
 @media (max-width: 540px){
-  .btn.number.web, #fb-cont{display:none;}
+  .btn.number.web, .btn.rank.web{display:none;}
   #game-wrap, #game-notice{ height:400px !important;}
-  .btn.number.mobail, #rank-mobail{width:90%; }
-  #rank-mobail:hover{border-radius: 100px; font-size:3rem; }
+  .btn.number.mobail, .btn.rank.mobail{width:90%; }
+  .btn.rank.mobail:hover{border-radius: 100px; font-size:3rem; }
   
   #cont{  column-width:500px !important;}
 }
