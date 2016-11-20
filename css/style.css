@@ -54,15 +54,13 @@ h1{
 .btn{
   text-decoration:none;
   font-size:2rem;
-  color:white;
+  color: rgba(240, 248, 255, 1);
   padding:10px 20px 10px 20px;
   margin:20px;
   transition:all 0.1s;
   text-shadow: 0px -1.5px rgba(0,0,0,0.44);
   font-family:'NanumGothic';
   font-weight:bold;
-}
-.btn:hover{
 }
 .btn.number{
   background-color: rgba(0,0,0,0.1);
@@ -72,6 +70,10 @@ h1{
 
 .btn.rank{
   background-color: #4080ff;
+}
+
+.btn:visited{
+    color: rgba(240, 248, 255, 1);
 }
 
 .btn.number:hover, .btn.rank:hover{

@@ -4,7 +4,7 @@
 $data_array = array();
 
 $temp = [
-  ['깃허브','http://github.com/u4bi'],
+  ['깃저장소','http://github.com/u4bi'],
   ['티스토리','http://web.u4bi.com'],
   ['페이스북','http://www.facebook.com/ymjcode'],
   ['깃페이지','http://u4bi.github.io'],
