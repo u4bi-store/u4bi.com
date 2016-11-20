@@ -10,6 +10,9 @@ body{
   margin: 0 auto;
   margin-bottom: 20px;
 }
+.fb-comments, .fb-comments iframe, .fb-comments span{
+  width:100% !important;
+}
 #game-wrap{
   width: 90%;
   height: 90%;
@@ -20,7 +23,7 @@ body{
 #cont{
   width:80%;
   margin: 0 auto;
-  column-width:135px;
+  column-width:140px;
   column-gap:0;
 }
 #cont figure{
