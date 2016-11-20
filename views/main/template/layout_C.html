@@ -1,7 +1,7 @@
 <div id="fb-wrap" align="center">
   <span ng-repeat="x in game">
-    <button ng-if="x.name == game[0].name" class="btn rank mobail" ng-click="showBtn(x.path)">{{x.name}}</button>
-    <button ng-if="x.name != game[0].name" class="btn rank web" ng-click="showBtn(x.path)">{{x.name}}</button>
+    <button ng-if="x.name == game[0].name" class="btn rank mobail" ng-mouseover="flag = true;" ng-mouseleave="flag = false;" ng-click="showBtn(x.path)">{{x.name | mouseover:flag}}</button>
+    <button ng-if="x.name != game[0].name" class="btn rank web"  ng-mouseover="flag = true;" ng-mouseleave="flag = false;" ng-click="showBtn(x.path)">{{x.name | mouseover:flag}}</button>
   </span>
   <div class="fb-comments" data-href="https://www.facebook.com/ymjcode" data-numposts="3"></div>
 </div>
