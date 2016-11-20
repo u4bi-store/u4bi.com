@@ -1,5 +1,6 @@
 <div id=cont>
   <figure ng-repeat="x in href">
-    <a class="btn number" ng-href="{{x.path}}" target="_blank">{{x.name}}</a>
+    <a ng-if="x.name == href[0].name" class="btn number mobail" ng-href="{{x.path}}" target="_blank">{{x.name}}</a>
+    <a ng-if="x.name != href[0].name" class="btn number web" ng-href="{{x.path}}" target="_blank">{{x.name}}</a>
   </figure>
 </div>
