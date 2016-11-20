@@ -9,6 +9,9 @@ function MainController($scope, MainService){
       $scope.showBtn = function(name){
         $scope.type=name; 
       };
+      $scope.suf = function(){
+        $scope.href = MainService.suf($scope.href);
+      };
     }
   
     function hrefAPI(){
