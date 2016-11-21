@@ -3,6 +3,7 @@
   #game-wrap, #game-notice{ height:400px !important;}
   .btn.number.mobail, .btn.rank.mobail{width:90%; }
   .btn.rank.mobail:hover{border-radius: 100px; font-size:3rem; }
+  .over-border{line-height:110% !important;}
   
   #cont{  column-width:500px !important;}
 }
@@ -67,9 +68,11 @@ h1{
   border-bottom:3px solid rgba(0,0,0,0.44);
   border-radius: 10px;
 }
-
 .btn.rank{
   background-color: #4080ff;
+}
+.btn.over{
+  background-color: #f79c1b;
 }
 
 .btn:visited{
@@ -96,12 +99,19 @@ h1{
   height:100%;
   display:inline-block;
 }
+#over-game table{font-size:2rem; color:#fff; font-weight:bold; margin: 0 auto;}
+#over-game button{padding:10px 20px 10px 20px;}
+#over-game input{width:60%; background:rgba(0,0,0,0.1); color:#fff;}
 #over-logo{
-  width:40%;
-  height:20%;
+  height:30%;
 }
 
 .over-border{
   float: left;
   width:33%;
+  line-height:200%;
+}
+.over-border img{
+  width:40%;
+  border-radius: 10%;
 }
