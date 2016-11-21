@@ -101,7 +101,17 @@ h1{
 }
 #over-game table{font-size:2rem; color:#fff; font-weight:bold; margin: 0 auto;}
 #over-game button{padding:10px 20px 10px 20px;}
-#over-game input{width:60%; background:rgba(0,0,0,0.1); color:#fff;}
+#over-game input{
+  width:65%;
+  background-color:transparent;
+  color:#fff;
+  border:0px;
+  border-bottom:3px solid rgba(240, 248, 255, 0.4);
+  outline: none;
+}
+#over-game input:focus{
+  border-bottom:3px solid rgba(255, 215, 0, 1);
+}
 #over-logo{
   height:30%;
 }

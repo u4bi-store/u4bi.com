@@ -2,10 +2,11 @@
   <div id="over-game">
     <img id="over-logo" src="http://i65.tinypic.com/t0mbdg.png">
     
+    <form>
     <table>
       <tr>
         <td>
-          <p>배틀태그 : <input type "text" ng-model="name"></p>
+          <p>배틀태그 : <input tabindex = "1" type="text" size="10" ng-model="name" autofocus></p>
         </td>
         <td rowspan="2">
           <button class="btn over" ng-click="overAPI(name,tagnum)">검색</button>
@@ -13,46 +14,52 @@
       </tr>
       <tr>
         <td>
-          <p>태그넘버 : <input type "text" ng-model="tagnum"></p>
+          <p>태그넘버 : <input tabindex = "2" type="text" size="10" ng-model="tagnum"></p>
         </td>
       </tr>
     </table>
+    </form>
     
-    <div class="over-border">
-      <p><img ng-src="{{over.data.avatar}}"></p>
-      <p>
-      이름 : {{over.data.username}}<br>
-      레벨 : {{over.data.level}}<br>
-      총 승리한 게임 : {{over.data.total_wins}}<br>
-      </p>
+    <div ng-show="overAjax">
+      <img src="http://theouchdoctor.com/images/common/loading.gif">
     </div>
-    <div class="over-border">
-      <p>
-      빠른대전<br>
-      플레이시간 : {{over.data.quick_play.time_played}}<br>
-      폭주시간 : {{over.data.quick_play.time_on_fire}}<br>
-      임무기여시간 : {{over.data.quick_play.objective_time}}<br>
-      상위 영웅<br>
-      1위 : {{over.data.quick_play.hero1}}<br>
-      2위 : {{over.data.quick_play.hero2}}<br>
-      3위 : {{over.data.quick_play.hero3}}<br>
-      </p>
-    </div>
-    <div class="over-border">
-      <p>
-      경쟁전<br>
-      랭크 : {{over.data.competitive_play.rank}}<br>
-      승리 : {{over.data.competitive_play.wins}}<br>
-      패배 : {{over.data.competitive_play.loss}}<br>
-      치룬 경기 : {{over.data.competitive_play.games_played}}<br>
-      플레이시간 : {{over.data.competitive_play.time_played}}<br>
-      폭주시간 : {{over.data.competitive_play.time_on_fire}}<br>
-      임무기여시간 : {{over.data.competitive_play.objective_time}}<br>
-      상위 영웅<br>
-      1위 : {{over.data.competitive_play.hero1}}<br>
-      2위 : {{over.data.competitive_play.hero2}}<br>
-      3위 : {{over.data.competitive_play.hero3}}<br>
-      </p>
+    <div ng-show="over.data.username">
+      <div class="over-border">
+        <p><img ng-src="{{over.data.avatar}}"></p>
+        <p>
+        이름 : {{over.data.username}}<br>
+        레벨 : {{over.data.level}}<br>
+        총 승리한 게임 : {{over.data.total_wins}}<br>
+        </p>
+      </div>
+      <div class="over-border">
+        <p>
+        빠른대전<br>
+        플레이시간 : {{over.data.quick_play.time_played}}<br>
+        폭주시간 : {{over.data.quick_play.time_on_fire}}<br>
+        임무기여시간 : {{over.data.quick_play.objective_time}}<br>
+        상위 영웅<br>
+        1위 : {{over.data.quick_play.hero1}}<br>
+        2위 : {{over.data.quick_play.hero2}}<br>
+        3위 : {{over.data.quick_play.hero3}}<br>
+        </p>
+      </div>
+      <div class="over-border">
+        <p>
+        경쟁전<br>
+        랭크 : {{over.data.competitive_play.rank}}<br>
+        승리 : {{over.data.competitive_play.wins}}<br>
+        패배 : {{over.data.competitive_play.loss}}<br>
+        치룬 경기 : {{over.data.competitive_play.games_played}}<br>
+        플레이시간 : {{over.data.competitive_play.time_played}}<br>
+        폭주시간 : {{over.data.competitive_play.time_on_fire}}<br>
+        임무기여시간 : {{over.data.competitive_play.objective_time}}<br>
+        상위 영웅<br>
+        1위 : {{over.data.competitive_play.hero1}}<br>
+        2위 : {{over.data.competitive_play.hero2}}<br>
+        3위 : {{over.data.competitive_play.hero3}}<br>
+        </p>
+      </div>
     </div>
   </div>
 </div>
