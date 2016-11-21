@@ -20,7 +20,18 @@ function MainController($scope, $anchorScroll, $location, MainService){
         MainService.json('https://api.overwatchinfo.com/pc/kr/'+name+'-'+tagnum+'/profile').then(function(data){
           $scope.overAjax =false;
           
-          console.log(JSON.stringify(data));
+          data.data.total_wins = MainService.rep(data.data.total_wins,'games won','');
+          data.data.quick_play.time_played = MainService.rep(data.data.quick_play.time_played,'hours', '시간');
+          data.data.competitive_play.time_played = MainService.rep(data.data.competitive_play.time_played,'hour', '시간');
+          
+          data.data.quick_play.hero1 = MainService.repHeroName(data.data.quick_play.hero1);
+          data.data.quick_play.hero2 = MainService.repHeroName(data.data.quick_play.hero2);
+          data.data.quick_play.hero3 = MainService.repHeroName(data.data.quick_play.hero3);
+          
+          data.data.competitive_play.hero1 = MainService.repHeroName(data.data.competitive_play.hero1);
+          data.data.competitive_play.hero2 = MainService.repHeroName(data.data.competitive_play.hero2);
+          data.data.competitive_play.hero3 = MainService.repHeroName(data.data.competitive_play.hero3);
+          
           $scope.over = data;
         });
       };
