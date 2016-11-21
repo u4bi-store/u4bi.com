@@ -35,8 +35,9 @@ function MainController($scope, $anchorScroll, $location, MainService){
           $scope.over = data;
         });
       };
-      $scope.showMusic = function(str){
-        $scope.musicType =str;
+      $scope.showMusic = function(obj){
+        $scope.musicName =obj.name;
+        $scope.musicPath =obj.path;
       };
     }
   

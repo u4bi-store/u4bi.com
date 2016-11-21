@@ -1,8 +1,11 @@
 <div id="game-notice">
   <div id="music-game">
-    <p>{{musicType}} 마음으로 코딩</p>
+    <p>{{musicName}} 마음으로 코딩</p>
     <span ng-repeat="x in music">
-      <button class="btn music" ng-click="showMusic(x.name)">{{x.name}}</button>
+      <button class="btn music" ng-click="showMusic(x)">{{x.name}}</button>
     </span>
+    <p ng-hide="true">
+      <iframe width="50%" height="30%" src="https://www.youtube.com/embed/_Ps8U_lhjPg?autoplay=1"></iframe>
+    </p>
   </div>
 </div>
