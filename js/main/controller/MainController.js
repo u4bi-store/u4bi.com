@@ -1,6 +1,6 @@
 app.controller('MainController', MainController);
 
-function MainController($scope, $anchorScroll, $location, MainService){
+function MainController($scope, $anchorScroll, $location, $sce, MainService){
 
     init();
     function init(){
@@ -37,7 +37,7 @@ function MainController($scope, $anchorScroll, $location, MainService){
       };
       $scope.showMusic = function(obj){
         $scope.musicName =obj.name;
-        $scope.musicPath =obj.path;
+        $scope.musicPath = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+obj.path);
       };
     }
   
