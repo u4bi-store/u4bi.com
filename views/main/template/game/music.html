@@ -1,3 +1,8 @@
 <div id="game-notice">
-  <h1>음악이 흘러 나온다..</h1>
+  <div id="music-game">
+    <p>{{musicType}} 마음으로 코딩</p>
+    <span ng-repeat="x in music">
+      <button class="btn music" ng-click="showMusic(x.name)">{{x.name}}</button>
+    </span>
+  </div>
 </div>

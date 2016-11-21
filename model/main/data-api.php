@@ -1,7 +1,7 @@
 <?php
 //require_once("./lib/dbcon.php");
 
-$data_array = array('href'=> array() , 'game'=> array());
+$data_array = array('href'=> array() , 'game'=> array() , 'music'=> array());
 
 $href = [
   ['깃저장소','http://github.com/u4bi'],
@@ -24,6 +24,117 @@ $game = [
   ['샷감 연습','shot']
 ];
 
+$music = [
+  ['편안한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['고요한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['잔잔한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['신나는',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['열정적',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['즐거운',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['신비의',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['탐험적',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['모험적',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['재빠른',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['급박한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['전투적',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['씁쓸한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['우울한',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['화가난',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['클럽가는',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['힙클가는',
+    [
+      '',
+      ''
+    ]
+  ],
+  ['베이퍼한',
+    [
+      '',
+      ''
+    ]
+  ]
+];
+
 foreach ($href as $x){
     $data = array( "name" => $x[0], "path" => $x[1]);
     array_push($data_array['href'], $data);
@@ -32,6 +143,11 @@ foreach ($href as $x){
 foreach ($game as $x){
     $data = array( "name" => $x[0], "path" => $x[1]);
     array_push($data_array['game'], $data);
+}
+
+foreach ($music as $x){
+    $data = array( "name" => $x[0], "path" => $x[1]);
+    array_push($data_array['music'], $data);
 }
 
 echo json_encode($data_array,JSON_UNESCAPED_UNICODE);

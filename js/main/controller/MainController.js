@@ -35,6 +35,9 @@ function MainController($scope, $anchorScroll, $location, MainService){
           $scope.over = data;
         });
       };
+      $scope.showMusic = function(str){
+        $scope.musicType =str;
+      };
     }
   
     function dataAPI(){
@@ -45,6 +48,7 @@ function MainController($scope, $anchorScroll, $location, MainService){
         console.log(data);
         $scope.href =data.href;
         $scope.game =data.game;
+        $scope.music=data.music;
       });
     }
 }

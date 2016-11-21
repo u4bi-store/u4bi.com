@@ -4,7 +4,7 @@
   .btn.number.mobail, .btn.rank.mobail{width:90%; }
   .btn.rank.mobail:hover{border-radius: 100px; font-size:3rem; }
   .over-border{line-height:110% !important;}
-  
+  .btn.music{font-size:1rem;}
   #cont{  column-width:500px !important;}
 }
 /* body */
@@ -74,6 +74,9 @@ h1{
 .btn.over{
   background-color: #f79c1b;
 }
+.btn.music{
+  background-color: rgba(100, 149, 237, 1);
+}
 
 .btn:visited{
     color: rgba(240, 248, 255, 1);
@@ -125,3 +128,14 @@ h1{
   width:40%;
   border-radius: 10%;
 }
+
+#music-game{
+  color:#fff;
+  font-size:1.5rem;
+  width:100%;
+  height:100%;
+  display:inline-block;
+}
+#music-game table{margin: 0 auto;}
+#music-game p{font-size:3rem;}
+#music-game table, #music-game p{color:#fff; font-weight:bold;}
