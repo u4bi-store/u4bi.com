@@ -1,6 +1,6 @@
 @media (max-width: 540px){
   .btn.number.web, .btn.rank.web{display:none;}
-  #game-wrap, #game-notice{ height:400px !important;}
+  #game-wrap, #game-notice{ height:auto !important;}
   .btn.number.mobail, .btn.rank.mobail{display:block !important; width:90%; }
   .btn.rank.mobail:hover{font-size:3rem;}
   .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
@@ -8,6 +8,7 @@
   .over-border{line-height:110% !important;}
   .btn.music{font-size:1rem;}
   #cont{  column-width:500px !important;}
+  #over-logo{width:100%;}
 }
 /* body */
 body{
