@@ -31,7 +31,7 @@ h1{
 }
 #game-wrap{
   width: 90%;
-  height: 90%;
+  height: 600px;
   border: 1px solid rgba(0,0,0,0.44);
   margin: 0 auto;
   margin-bottom: 20px;
@@ -91,7 +91,7 @@ h1{
 }
 
 .btn.rank:hover{
-  font-size:3rem;
+  font-size:2.3rem;
 }
 
 /* game*/
