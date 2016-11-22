@@ -1,6 +1,7 @@
 <div id="fb-wrap" align="center">
   <div class="dropdown">
     <button class="btn rank mobail" ng-mouseover="flag = true;" ng-mouseleave="flag = false;">{{'속들여다보기' | mouseover:flag}}</button>
+    <button class="btn rank web"  ng-mouseover="flag = true;" ng-mouseleave="flag = false;" ng-click="showBtn(null)">{{'만남의광장' | mouseover:flag}}</button>
   <span ng-repeat="x in game">
     <button class="btn rank web"  ng-mouseover="flag = true;" ng-mouseleave="flag = false;" ng-click="showBtn(x.path)">{{x.name | mouseover:flag}}</button>
   </span>
