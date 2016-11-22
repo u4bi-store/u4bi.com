@@ -1,5 +1,5 @@
 <div id="game-notice">
-  <div id="music-game">
+  <div class="game-style" id="music-game">
     <p>{{musicName}} 마음으로 코딩</p>
     <span ng-repeat="x in music">
       <button class="btn music" ng-style="{'background-color': (x.path | musiccolor)}" ng-click="showMusic(x)">{{x.name}}</button>
