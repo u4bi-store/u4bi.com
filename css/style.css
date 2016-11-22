@@ -175,7 +175,8 @@ h1{
 #border-list{
   margin: 0 auto;
   width:80%;
-  height:70%;  
+  height:70%;
+  font-size:1.7rem;
   background-color:transparent;
   color:#fff;
   text-align:center;
