@@ -36,6 +36,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         });
       };
       $scope.showMusic = function(obj){
+        if(obj.path == '') return;
         $scope.musicName =obj.name;
         $scope.musicPath = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+obj.path);
       };
