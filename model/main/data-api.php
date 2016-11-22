@@ -22,7 +22,7 @@ $game = [
   ['운명의 주사위','dice'],
   ['홀짝 사다리','radder'],
   ['샷감 연습','shot'],
-  ['신상털기방지','identity']
+  ['신상저격','identity']
 ];
 
 $music = [
