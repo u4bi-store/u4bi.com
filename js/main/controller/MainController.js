@@ -55,15 +55,20 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         
         if(bool) $scope.borderType++;
         else $scope.borderType--;
-        borderAPI(0,0);
+        borderAPI(0,$scope.borderType);
         if(!$scope.borderFlag)$scope.borderFlag=true;
+      };
+      $scope.borderReload = function(){
+        borderAPI(0,$scope.borderType);
+        if(!$scope.borderFlag)$scope.borderFlag=true;        
       };
       $scope.showList = function(viewnum){
         borderAPI(0,viewnum);
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
-      $scope.showDetail = function(viewnum){
-        borderAPI(1,viewnum-1);
+      $scope.showDetail = function(keynum,viewnum){
+        if(keynum == -1|| keynum == $scope.listLen) return;
+        borderAPI(1, keynum, viewnum-1);
         if($scope.borderFlag)$scope.borderFlag=false;
       };
     }
@@ -81,17 +86,20 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       });
     }
   
-    function borderAPI(type, viewnum){
-      $scope.list = null;
-      $scope.detail = null;
+    function borderAPI(type, keynum, viewnum){
 
-      var path=['model/border/list-api.php/?id=','model/border/detail-api.php/?id='];
+      var path=['model/border/list-api.php/?','model/border/detail-api.php/?'];
 
-      MainService.json(path[type]+viewnum).then(function(data){
+      MainService.json(path[type]+'keynum='+keynum+'&viewnum='+viewnum).then(function(data){
         if(type==0){
-          $scope.list = data.list;
           $scope.detail=null;
-        } else $scope.detail = data.detail;
+          $scope.list = null;
+          $scope.list = data.list;
+          $scope.listLen = data.list.length;
+        } else{
+          data.detail[0].key = parseInt(data.detail[0].key); 
+          $scope.detail = data.detail;
+        }
       });
     };
 }

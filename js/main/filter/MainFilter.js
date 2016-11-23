@@ -14,16 +14,21 @@ function musiccolor(){
     };
 }
 
-function pagingcolor(){
+function typePagingColor(){
     return function(x,bool){
-      var result = null;
-      
       if(bool && x == 3 || !bool && x == 0) return '#9c9c9c';
-      result = '##9c9c9c';
-      return result;
+    };
+}
+
+
+function detailPagingColor(){
+    return function(x, len){
+      var result = null;
+      if(x == -1|| x == len) return '#9c9c9c';
     };
 }
 
 app.filter('musiccolor', musiccolor);
 app.filter('mouseover', mouseover);
-app.filter('pagingcolor', pagingcolor);
+app.filter('typePagingColor', typePagingColor);
+app.filter('detailPagingColor', detailPagingColor);

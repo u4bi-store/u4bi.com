@@ -2,9 +2,9 @@
   <div class="game-style" id="border-game">
     <div id="border-title">
         <p>
-        <button class="btn border" ng-click="borderTurn(false)" ng-style="{'background-color': (borderType | pagingcolor:false)}"><</button>
-        <button class="btn border type" ng-click="showList(borderPage)">{{border[borderType].name}}</button>
-        <button class="btn border" ng-click="borderTurn(true)" ng-style="{'background-color': (borderType | pagingcolor:true)}">></button>
+        <button class="btn border" ng-click="borderTurn(false)" ng-style="{'background-color': (borderType | typePagingColor:false)}"><</button>
+        <button class="btn border type" ng-click="borderReload()">{{border[borderType].name}}</button>
+        <button class="btn border" ng-click="borderTurn(true)" ng-style="{'background-color': (borderType | typePagingColor:true)}">></button>
         </p>
         <p align="right">
           <button class="btn border" ng-show="borderFlag">작성</button>
@@ -14,18 +14,23 @@
     </div>
     <div id="border-detail" ng-hide="borderFlag">
 <textarea readonly>
-{{detail[0].id}}
-{{detail[0].content}}  
+[글번호] : {{detail[0].id}}
+[제목명] : {{list[detail[0].key].title}}
+[작성자] : {{list[detail[0].key].writer}}
+[조회수] : {{list[detail[0].key].hit}}
+[작성일] : {{list[detail[0].key].date}}
+
+{{detail[0].content}}
 </textarea>
     <p align="center">
-      <button class="btn border prne" ng-hide="borderFlag" ng-click="showDetail(detail[0].id-1)">이전글</button>
-      <button class="btn border prne" ng-hide="borderFlag" ng-click="showList(borderPage)">목록</button>
-      <button class="btn border prne" ng-hide="borderFlag" ng-click="showDetail(detail[0].id+1)">다음글</button>
+      <button class="btn border prne" ng-hide="borderFlag" ng-click="showDetail(detail[0].key-1, list[detail[0].key-1].id)" ng-style="{'background-color': (detail[0].key-1 | detailPagingColor)}">이전글</button>
+      <button class="btn border prne" ng-hide="borderFlag" ng-click="borderReload()">목록</button>
+      <button class="btn border prne" ng-hide="borderFlag" ng-click="showDetail(detail[0].key+1, list[detail[0].key+1].id)" ng-style="{'background-color': (detail[0].key+1 | detailPagingColor:listLen)}">다음글</button>
     </p>
     </div>
     <div id="border-footer" ng-show="borderFlag" ng-init="showList(borderPage)">
       <div id="border-list">
-        <p ng-repeat="x in list" ng-click="showDetail(x.id)">
+        <p ng-repeat="x in list" ng-click="showDetail($index, x.id)">
           <span>{{x.title}}</span>
           <span>{{x.writer}}</span>
           <sapn>{{x.hit}}</sapn>
