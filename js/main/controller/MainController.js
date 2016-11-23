@@ -16,6 +16,20 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       $scope.suf = function(){
         $scope.href = MainService.suf($scope.href);
       };
+      $scope.borderAPI = function(type, viewnum){
+        $scope.list = null;
+        $scope.detail = null;
+        
+        var path=['model/border/list-api.php/?id=','model/border/detail-api.php/?id='];
+        
+        MainService.json(path[type]+viewnum).then(function(data){
+          if(type==0){
+            $scope.list = data.list;
+            $scope.detail=null;
+          } else $scope.detail = data.detail;
+        });
+      };
+      
       $scope.overAPI = function(name, tagnum){
         $scope.over = null;
         $scope.overAjax=true;
