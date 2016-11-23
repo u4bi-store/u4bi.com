@@ -40,11 +40,13 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
           $scope.over = data;
         });
       };
+      
       $scope.showMusic = function(obj){
         if(obj.path == '') return;
         $scope.musicName =obj.name;
         $scope.musicPath = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+obj.path);
       };
+      
       $scope.borderTurn = function(bool){
         var len = $scope.border.length-1;
         var now = $scope.borderType;
@@ -56,15 +58,15 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         borderAPI(0,0);
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
+      $scope.showList = function(viewnum){
+        borderAPI(0,viewnum);
+        if(!$scope.borderFlag)$scope.borderFlag=true;
+      };
+      $scope.showDetail = function(viewnum){
+        borderAPI(1,viewnum-1);
+        if($scope.borderFlag)$scope.borderFlag=false;
+      };
     }
-    $scope.showList = function(viewnum){
-      borderAPI(0,viewnum);
-      if(!$scope.borderFlag)$scope.borderFlag=true;
-    };
-    $scope.showDetail = function(viewnum){
-      borderAPI(1,viewnum-1);
-      if($scope.borderFlag)$scope.borderFlag=false;
-    };
   
     function dataAPI(){
       MainService.json('model/main/data-api.php').then(function(data){
