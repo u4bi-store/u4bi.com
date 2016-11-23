@@ -189,7 +189,7 @@ h1{
 
 }
 #border-list p{
-  border:1px solid rgba(240, 248, 255, 0.4);
+  border-bottom:1px solid rgba(240, 248, 255, 0.2);
 }
 #border-list p:hover{
   cursor:pointer;
