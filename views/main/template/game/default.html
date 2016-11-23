@@ -2,9 +2,9 @@
   <div class="game-style" id="border-game">
     <div id="border-title">
         <p>
-        <button class="btn border"><</button>
-        <button class="btn border type">자유게시판</button>
-        <button class="btn border">></button>
+        <button class="btn border" ng-click="borderTurn(false)" ng-style="{'background-color': (borderType | pagingcolor:false)}"><</button>
+        <button class="btn border type">{{border[borderType].name}}</button>
+        <button class="btn border" ng-click="borderTurn(true)" ng-style="{'background-color': (borderType | pagingcolor:true)}">></button>
         </p>
         <p align="right">
         <button class="btn border">작성</button>

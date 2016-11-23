@@ -6,6 +6,8 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
     function init(){
       console.log('ok 200');
       dataAPI();
+      $scope.borderType=0;
+      
       $scope.showBtn = function(name){
         $scope.type=name;
         $location.hash('game-wrap');
@@ -40,6 +42,15 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         $scope.musicName =obj.name;
         $scope.musicPath = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+obj.path);
       };
+      $scope.borderTurn = function(bool){
+        var len = $scope.border.length-1;
+        var now = $scope.borderType;
+        
+        if(bool && now == len || !bool && now == 0) return;
+        
+        if(bool) return $scope.borderType++;
+        $scope.borderType--;
+      };
     }
   
     function dataAPI(){
@@ -51,6 +62,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         $scope.href =data.href;
         $scope.game =data.game;
         $scope.music=data.music;
+        $scope.border=data.border;
       });
     }
 }
