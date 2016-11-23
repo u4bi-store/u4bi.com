@@ -9,6 +9,8 @@
   .btn.music{font-size:1rem;}
   #cont{  column-width:500px !important;}
   #over-logo{width:100%;}
+  #border-list{width:100% !important; height: 40% !important; }
+  #border-list p:hover, #border-list p:active{background:none !important;}
 }
 
 ::-webkit-scrollbar {border: 0;}
@@ -195,7 +197,7 @@ h1{
   cursor:pointer;
   background:rgba(240, 248, 255, 0.2);
   font-weight:bold;
-}
+} 
 #border-list p:active{
   cursor:pointer;
   background:rgba(255, 20, 147, 1);
