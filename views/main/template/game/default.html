@@ -7,13 +7,13 @@
         <button class="btn border" ng-click="borderTurn(true)" ng-style="{'background-color': (borderType | pagingcolor:true)}">></button>
         </p>
         <p align="right">
-        <button class="btn border">작성</button>
-        <button class="btn border">수정</button>
-        <button class="btn border">삭제</button>
-        <button class="btn border">목록</button>
+        <button class="btn border" ng-show="borderFlag">작성</button>
+        <button class="btn border" ng-hide="borderFlag">수정</button>
+        <button class="btn border" ng-hide="borderFlag">삭제</button>
+        <button class="btn border" ng-hide="borderFlag" ng-click="showList(borderPage)">목록</button>
         </p>
     </div>
-    <div id="border-detail" ng-hide="true">
+    <div id="border-detail" ng-hide="borderFlag">
 <textarea readonly>
 {{list[0].id}}
 {{list[0].type}}
@@ -26,9 +26,9 @@
 {{detail[0].content}}  
 </textarea>
     </div>
-    <div id="border-footer" ng-init="borderAPI(0)">
+    <div id="border-footer" ng-show="borderFlag" ng-init="showList(borderPage)">
       <div id="border-list">
-        <p ng-repeat="x in list">
+        <p ng-repeat="x in list" ng-click="showDetail(x.id)">
           <span>{{x.title}}</span>
           <span>{{x.writer}}</span>
           <sapn>{{x.hit}}</sapn>

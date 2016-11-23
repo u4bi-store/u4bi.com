@@ -7,6 +7,8 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       console.log('ok 200');
       dataAPI();
       $scope.borderType=0;
+      $scope.borderPage=0;
+      $scope.borderFlag=true;
       
       $scope.showBtn = function(name){
         $scope.type=name;
@@ -15,19 +17,6 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       };
       $scope.suf = function(){
         $scope.href = MainService.suf($scope.href);
-      };
-      $scope.borderAPI = function(type, viewnum){
-        $scope.list = null;
-        $scope.detail = null;
-        
-        var path=['model/border/list-api.php/?id=','model/border/detail-api.php/?id='];
-        
-        MainService.json(path[type]+viewnum).then(function(data){
-          if(type==0){
-            $scope.list = data.list;
-            $scope.detail=null;
-          } else $scope.detail = data.detail;
-        });
       };
       
       $scope.overAPI = function(name, tagnum){
@@ -62,10 +51,20 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         
         if(bool && now == len || !bool && now == 0) return;
         
-        if(bool) return $scope.borderType++;
-        $scope.borderType--;
+        if(bool) $scope.borderType++;
+        else $scope.borderType--;
+        borderAPI(0,0);
+        if(!$scope.borderFlag)$scope.borderFlag=true;
       };
     }
+    $scope.showList = function(viewnum){
+      borderAPI(0,viewnum);
+      if(!$scope.borderFlag)$scope.borderFlag=true;
+    };
+    $scope.showDetail = function(viewnum){
+      borderAPI(1,viewnum-1);
+      if($scope.borderFlag)$scope.borderFlag=false;
+    };
   
     function dataAPI(){
       MainService.json('model/main/data-api.php').then(function(data){
@@ -79,4 +78,18 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         $scope.border=data.border;
       });
     }
+  
+    function borderAPI(type, viewnum){
+      $scope.list = null;
+      $scope.detail = null;
+
+      var path=['model/border/list-api.php/?id=','model/border/detail-api.php/?id='];
+
+      MainService.json(path[type]+viewnum).then(function(data){
+        if(type==0){
+          $scope.list = data.list;
+          $scope.detail=null;
+        } else $scope.detail = data.detail;
+      });
+    };
 }
