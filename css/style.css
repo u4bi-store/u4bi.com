@@ -17,7 +17,7 @@ body{
   scrollbar-arrow-color: transparent;
   scrollbar-base-color: transparent;
   font-family:'NanumGothic';
-  background: url(http://www.ilikewallpaper.net/iphone-6-wallpapers/download/27820/iOS8-Theme-Color-Gradation-Blur-Background-iphone-6-wallpaper-ilikewallpaper_com.jpg) no-repeat fixed 0 0 / cover;
+  background: url(https://unsplash.it/1920/1080/?random&blur) no-repeat fixed 0 0 / cover;
 }
 
 h1{
@@ -30,7 +30,7 @@ h1{
   width: 90%;
   height:auto;
   border: 1px solid rgba(0,0,0,0.44);
-  background: #fff;
+  background-color: rgba(0,0,0,0.6);
   border-radius: 10px;
   margin: 0 auto;
   margin-bottom: 20px;
