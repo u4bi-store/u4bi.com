@@ -62,7 +62,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
       $scope.borderReload = function(){
-        borderAPI(0, $scope.borderType, $scope.borderPage);
+        borderAPI(0, $scope.borderType, $scope.currentPage);
         if(!$scope.borderFlag)$scope.borderFlag=true;        
       };
       $scope.showList = function(viewnum, prev){
@@ -77,7 +77,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       
       $scope.showDetail = function(keynum,viewnum){
         if(keynum == -1|| keynum == $scope.list.length) return;
-        borderAPI(1, keynum, viewnum-1);
+        borderAPI(1, keynum, viewnum);
         if($scope.borderFlag)$scope.borderFlag=false;
       };
     }
