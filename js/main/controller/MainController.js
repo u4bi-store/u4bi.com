@@ -12,7 +12,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       
       $scope.showBtn = function(name){
         $scope.type=name;
-        $location.hash('game-wrap');
+        $location.hash('');
         $anchorScroll();
       };
       $scope.suf = function(){
