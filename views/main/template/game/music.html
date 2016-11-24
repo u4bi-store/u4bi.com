@@ -4,8 +4,5 @@
     <span ng-repeat="x in music">
       <button class="btn music" ng-style="{'background-color': (x.path | musiccolor)}" ng-click="showMusic(x)">{{x.name}}</button>
     </span>
-    <p ng-hide="true">
-      <iframe width="50%" height="30%" ng-src="{{musicPath}}"></iframe>
-    </p>
   </div>
 </div>

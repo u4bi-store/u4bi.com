@@ -20,7 +20,7 @@ body{
   scrollbar-arrow-color: transparent;
   scrollbar-base-color: transparent;
   font-family:'NanumGothic';
-  background: url(https://unsplash.it/1920/1080/?random&blur) no-repeat fixed 0 0 / cover;
+  background: url('../images/back_7.jpg') no-repeat fixed 0 0 / cover;
 }
 
 h1{
