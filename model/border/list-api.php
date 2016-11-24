@@ -4,7 +4,7 @@
 $keynum = $_GET["keynum"];
 $viewnum = $_GET["viewnum"];
 
-$data_array = array('list'=> array());
+$data_array = array('list'=> array(), 'len'=>null);
 
 $list = [
   [24,2,'하카카카카','길동이',3,'2016/12/23/23:23'],
@@ -41,8 +41,13 @@ $list = [
   [23,2,'우키키키','길동이',3,'2016/12/23/23:23']
 ];
 
+$limit = 4;
+$first = ($viewnum-1)*$limit;
+$last = $viewnum*$limit;
+$tick = 0;
 foreach ($list as $x){
-    if($x[1] == $keynum){
+  if($x[1] == $keynum){
+    if($first <= $tick && $tick < $last){
       $data = array(
         "id" => $x[0],
         "type" => $x[1],
@@ -53,7 +58,10 @@ foreach ($list as $x){
       );
       array_push($data_array['list'], $data);
     }
+    $tick++;
+  }
 }
+$data_array['len'] = ($tick/$limit)+1;
 
 echo json_encode($data_array,JSON_UNESCAPED_UNICODE);
 ?>

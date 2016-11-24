@@ -7,7 +7,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       console.log('ok 200');
       dataAPI();
       $scope.borderType=0;
-      $scope.borderPage=0;
+      $scope.borderPage=1;
       $scope.borderFlag=true;
       
       $scope.showBtn = function(name){
@@ -59,15 +59,21 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
       $scope.borderReload = function(){
-        borderAPI(0,$scope.borderType);
+        borderAPI(0, $scope.borderType, $scope.borderPage);
         if(!$scope.borderFlag)$scope.borderFlag=true;        
       };
-      $scope.showList = function(viewnum){
-        borderAPI(0,viewnum);
+      $scope.showList = function(viewnum, prev){
+        if(viewnum == 0|| viewnum >= $scope.listLen) return
+        $scope.currentPage = viewnum;
+        if(prev) $scope.borderPage = viewnum-1;
+        else if(viewnum%2 != 0) $scope.borderPage = viewnum;
+        
+        borderAPI(0, $scope.borderType, viewnum);
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
+      
       $scope.showDetail = function(keynum,viewnum){
-        if(keynum == -1|| keynum == $scope.listLen) return;
+        if(keynum == -1|| keynum == $scope.list.length) return;
         borderAPI(1, keynum, viewnum-1);
         if($scope.borderFlag)$scope.borderFlag=false;
       };
@@ -95,7 +101,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
           $scope.detail=null;
           $scope.list = null;
           $scope.list = data.list;
-          $scope.listLen = data.list.length;
+          $scope.listLen = data.len;
         } else{
           data.detail[0].key = parseInt(data.detail[0].key); 
           $scope.detail = data.detail;

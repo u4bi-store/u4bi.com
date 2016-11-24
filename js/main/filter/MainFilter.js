@@ -21,14 +21,21 @@ function typePagingColor(){
 }
 
 
-function detailPagingColor(){
+function prnePagingColor(){
     return function(x, len){
-      var result = null;
-      if(x == -1|| x == len) return '#9c9c9c';
+      if(x == -1|| x >= len) return '#9c9c9c';
+    };
+}
+
+function listPagingColor(){
+    return function(x, page, len){
+      if(page >= len) return '#9c9c9c';
+      if(x == page) return '#1e63d9';
     };
 }
 
 app.filter('musiccolor', musiccolor);
 app.filter('mouseover', mouseover);
 app.filter('typePagingColor', typePagingColor);
-app.filter('detailPagingColor', detailPagingColor);
+app.filter('prnePagingColor', prnePagingColor);
+app.filter('listPagingColor', listPagingColor);
