@@ -10,7 +10,6 @@
   #cont{  column-width:500px !important;}
   #over-logo{width:100%;}
   #border-list{width:100% !important; height: 65% !important; }
-  #border-list p:hover, #border-list p:active{background:none !important;}
   .btn.border.page{font-size:2rem !important;}
   .btn.border.prne{font-size:1.8rem !important;}
 }
@@ -96,7 +95,7 @@ h1{
   background-color: rgba(100, 149, 237, 1);
   font-size:2.2rem;
   maring:0;
-  padding:5px 5.5px 5px 5.5px;
+  padding:5px 7.5px 5px 7.5px;
 }
 .btn.border.page{font-size:1.5rem; padding:5px 10px 5px 10px;}
 .btn.border.type{width:50%;}
