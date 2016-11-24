@@ -55,7 +55,10 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         
         if(bool) $scope.borderType++;
         else $scope.borderType--;
-        borderAPI(0,$scope.borderType);
+        
+        $scope.borderPage=1;
+        $scope.currentPage=1;
+        borderAPI(0,$scope.borderType,$scope.borderPage);
         if(!$scope.borderFlag)$scope.borderFlag=true;
       };
       $scope.borderReload = function(){
