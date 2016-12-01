@@ -89,17 +89,17 @@ function GameController($scope){
   
   function initBricks(){
     brickInfo ={
-      width: 40,
+      width: 30,
       height: 20,
       count: {
-        row: 7,
+        row: 8,
         col: 4
       },
       offset: {
         top: 20,
-        left: 20
+        left: 55
       },
-      padding: 30
+      padding: 20
     };
 
     bricks = game.add.group();
@@ -164,9 +164,9 @@ function GameController($scope){
       paddle.reset(game.world.width*0.5, game.world.height-5);
 
       game.input.onDown.addOnce(function(){
-      angular.forEach(bricks, function(value, key) {
-        value.kill();
-      });
+        angular.forEach(bricks, function(value, key) {
+          value.kill();
+        });
         restart();
       }, this);
     }
