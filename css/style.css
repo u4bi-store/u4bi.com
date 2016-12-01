@@ -5,7 +5,7 @@
   .btn.rank.mobail:hover{font-size:3rem;}
   .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
   .dropdown:hover .btn.rank.web{display:block !important;}
-  .over-border{line-height:110% !important;}
+  .over-border{line-height:150% !important;}
   .btn.music{font-size:1rem;}
   #cont{  column-width:500px !important;}
   #over-logo{width:100%;}
