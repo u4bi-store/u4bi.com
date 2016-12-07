@@ -82,8 +82,8 @@ function GameController($scope){
     intro = game.add.audio('intro');  
   }
   function update(){
-    game.physics.arcade.overlap(ball, paddle, ballHitPaddle, null, this);
-    game.physics.arcade.overlap(ball, bricks, ballHitBrick, null, this);
+    game.physics.arcade.collide(ball, paddle, ballHitPaddle);
+    game.physics.arcade.collide(ball, bricks, ballHitBrick);
     if(playing) paddle.x = game.input.x || game.world.width*0.5;
   }
   
