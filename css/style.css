@@ -55,6 +55,11 @@ h1{
   height:auto;
   background-color: rgba(0,0,0,0.6);
 }
+#game-game{
+  height:100px;
+  overflow-y: scroll;
+}
+
 #cont{
   display:inline block;
   width:90%;
@@ -91,6 +96,11 @@ h1{
 .btn.music{
   background-color: rgba(100, 149, 237, 1);
 }
+.btn.minigame{
+  font-size:2.5rem;
+  width: 70%;
+  background-color: rgba(0, 206, 209, 1);
+}
 .btn.border{
   background-color: rgba(100, 149, 237, 1);
   font-size:2.2rem;
@@ -115,7 +125,8 @@ h1{
 .btn.rank:hover{
   font-size:2.2rem;
 }
-
+.btn.minigame:hover{
+}
 /* game*/
 .game-style{
   color:#fff;

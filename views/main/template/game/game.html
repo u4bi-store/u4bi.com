@@ -1,5 +1,15 @@
 <div id="game-notice">
-  <div ng-controller="GameController" class="game-style" id="game-game">
-    <div id="game-area"></div>
+  <div class="game-style">
+  <div ng-switch="minigameType">
+    <div mini-wrap type="js-pingpong" ng-switch-when="js-pingpong"></div>
+    <div mini-wrap type="horse-game" ng-switch-when="horse-game"></div>
+    <div mini-wrap type="suckbong-game" ng-switch-when="suckbong-game"></div>
+  </div>
+    <br>
+    <div id="game-game">
+      <span ng-repeat="x in minigame">
+        <button class="btn minigame" ng-style="{'background-color': (x.path | minigamecolor)}" ng-click="showMinigame(x.path)">{{x.name}}</button>
+      </span>
+    </div>
   </div>
 </div>

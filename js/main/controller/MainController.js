@@ -9,9 +9,15 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       $scope.borderType=0;
       $scope.borderPage=1;
       $scope.borderFlag=true;
-      
+      $scope.minigameType='js-pingpong';
       $scope.showBtn = function(name){
         $scope.type=name;
+        $location.hash('');
+        $anchorScroll();
+      };
+      $scope.showMinigame = function(name){
+        if(name == '') return;
+        $scope.minigameType=name;
         $location.hash('');
         $anchorScroll();
       };
@@ -90,6 +96,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
         console.log(data);
         $scope.href =data.href;
         $scope.game =data.game;
+        $scope.minigame = data.minigame;
         $scope.music=data.music;
         $scope.border=data.border;
       });

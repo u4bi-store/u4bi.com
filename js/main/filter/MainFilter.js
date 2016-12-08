@@ -14,6 +14,14 @@ function musiccolor(){
     };
 }
 
+function minigamecolor(){
+    return function(x){
+      var result = null;
+      x == '' ? result = '#9c9c9c' : result = '#00ced1';
+      return result;
+    };
+}
+
 function typePagingColor(){
     return function(x,bool){
       if(bool && x == 3 || !bool && x == 0) return '#9c9c9c';
@@ -34,6 +42,7 @@ function listPagingColor(){
     };
 }
 
+app.filter('minigamecolor', minigamecolor);
 app.filter('musiccolor', musiccolor);
 app.filter('mouseover', mouseover);
 app.filter('typePagingColor', typePagingColor);

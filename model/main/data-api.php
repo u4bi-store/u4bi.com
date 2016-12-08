@@ -1,7 +1,7 @@
 <?php
 //require_once("./lib/dbcon.php");
 
-$data_array = array('href'=> array() , 'game'=> array() , 'music'=> array(), 'border'=> array());
+$data_array = array('href'=> array() , 'game'=> array() , 'minigame'=> array() , 'music'=> array(), 'border'=> array());
 
 $href = [
   ['깃저장소','http://github.com/u4bi'],
@@ -23,6 +23,15 @@ $game = [
   ['홀짝 사다리','radder'],
   ['FPS샷감 연습','shot'],
   ['지하철매니저','subway']
+];
+
+$minigame = [
+  ['자스핑퐁','js-pingpong'],
+  ['스타런',''],
+  ['자스팡',''],
+  ['순발력게임',''],
+  ['웹경마','horse-game'],
+  ['석봉이알피지','suckbong-game']
 ];
 
 $music = [
@@ -61,6 +70,11 @@ foreach ($href as $x){
 foreach ($game as $x){
     $data = array( "name" => $x[0], "path" => $x[1]);
     array_push($data_array['game'], $data);
+}
+
+foreach ($minigame as $x){
+    $data = array( "name" => $x[0], "path" => $x[1]);
+    array_push($data_array['minigame'], $data);
 }
 
 foreach ($music as $x){

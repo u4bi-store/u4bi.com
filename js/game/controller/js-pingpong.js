@@ -1,4 +1,4 @@
-app.controller('GameController', GameController);
+app.controller('js-pingpong', GameController);
 
 function GameController($scope){
   
@@ -16,7 +16,7 @@ function GameController($scope){
   init();
   function init(){
     console.log('ok game');
-    game = new Phaser.Game(800, 500, Phaser.AUTO, 'game-area', {
+    game = new Phaser.Game(800, 500, Phaser.AUTO, 'game-area-js-pingpong', {
       preload: preload,
       create: create,
       update: update
