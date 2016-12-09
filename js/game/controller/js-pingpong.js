@@ -33,12 +33,12 @@ function GameController($scope){
     game.scale.pageAlignVertically = true;
     //game.stage.backgroundColor = 'rgba(0,0,0,0.44)';
     
-    game.load.image('background', 'images/game/sky.png');
-    game.load.image('paddle', 'images/game/paddle.png');
-    game.load.spritesheet('ball', 'images/game/spritesheet.png', 25, 26);
-    game.load.spritesheet('brick', 'images/game/brick_spritesheet.png', 23, 27);
-    game.load.spritesheet('button', 'images/game/button.png', 120,40);
-    game.load.audio('bounce', 'audio/game/bounce.mp3');
+    game.load.image('background', 'images/game/js-pingpong/sky.png');
+    game.load.image('paddle', 'images/game/js-pingpong/paddle.png');
+    game.load.spritesheet('ball', 'images/game/js-pingpong/spritesheet.png', 25, 26);
+    game.load.spritesheet('brick', 'images/game/js-pingpong/brick_spritesheet.png', 23, 27);
+    game.load.spritesheet('button', 'images/game/js-pingpong/button.png', 120,40);
+    game.load.audio('bounce', 'audio/game/js-pingpong/bounce.mp3');
     
   }
   
