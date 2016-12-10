@@ -38,8 +38,10 @@ function EscapeController($scope){
 
     geometry = new THREE.SphereGeometry(500, 60, 40); /* 구체형의 기하체를 만듬*/
     geometry.scale(-1, 1, 1); /*  기하체의 스케일값 조정*/
-
-    var material_data = { map : new THREE.TextureLoader().load('images/escape/area_0.jpg')}; /* 객체로 이미지 데이터 정보 정의*/
+    
+    var ran = Math.floor(Math.random() * 5);
+    console.log(ran);
+    var material_data = { map : new THREE.TextureLoader().load('images/escape/area_'+ran+'.jpg')}; /* 객체로 이미지 데이터 정보 정의*/
     material = new THREE.MeshBasicMaterial(material_data); /* 물체에 입힐 위의 이미지를 material에 로드함 */
     mesh = new THREE.Mesh(geometry, material); /* mesh에 geometry와 meterial란 객체를 주입하여 적용함*/
 
