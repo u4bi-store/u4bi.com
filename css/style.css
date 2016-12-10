@@ -218,3 +218,16 @@ h1{
 #border-list span{
   margin:5px;
 }
+
+#escape-content{
+  position: absolute;
+  width : 89.7%;
+  height : 200px;
+  top:50%;
+  background: rgba(0,0,0,0.6);
+}
+
+#escape-content span{
+  font-size:4rem;
+  font-weight:bold;
+}
