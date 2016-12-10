@@ -128,7 +128,7 @@ function ShotController($scope, $timeout){
     var flag_rand  = Math.floor(Math.random() * 2);
     if(flag_rand){
       value = -value;
-      if(!hanzo_info.on && parseInt(value)%5 == -0){
+      if(time != 0  && playing && !hanzo_info.on && parseInt(value)%5 == -0){
         hanzoTime(true);
         crosshair.animations.play('hanzoAim');
         hanzo_info.shot = $timeout(hanzoKill, 1000);
@@ -142,7 +142,7 @@ function ShotController($scope, $timeout){
   function hanzoRemove(){
     if(!playing)return;
     if(time == 0) return;
-    if(playing && !hanzo_info.on)return hanzoKill();
+    if(time != 0 && playing && !hanzo_info.on)return hanzoKill();
     $timeout.cancel(hanzo_info.shot);
     hanzoTime(false);
     kill.stop();
