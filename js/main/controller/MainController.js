@@ -4,6 +4,9 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
 
     init();
     function init(){
+      $scope.name ='NECOP';
+      $scope.tagnum = '3112';
+      
       console.log('ok 200');
       dataAPI();
       $scope.borderType=0;
@@ -33,7 +36,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
           
           data.data.total_wins = MainService.rep(data.data.total_wins,'games won','');
           data.data.quick_play.time_played = MainService.rep(data.data.quick_play.time_played,'hours', '시간');
-          data.data.competitive_play.time_played = MainService.rep(data.data.competitive_play.time_played,'hour', '시간');
+          data.data.competitive_play.time_played = MainService.rep(data.data.competitive_play.time_played,'hours', '시간');
           
           data.data.quick_play.hero1 = MainService.repHeroName(data.data.quick_play.hero1);
           data.data.quick_play.hero2 = MainService.repHeroName(data.data.quick_play.hero2);
