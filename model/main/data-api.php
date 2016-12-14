@@ -22,7 +22,7 @@ $game = [
   ['밀실탈출','escape'],
   ['홀짝 사다리','radder'],
   ['FPS샷감 연습','shot'],
-  ['지하철매니저','subway']
+  ['동영상강좌','teach']
 ];
 
 $minigame = [
