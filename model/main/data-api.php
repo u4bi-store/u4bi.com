@@ -7,7 +7,7 @@ $href = [
   ['깃저장소','http://github.com/u4bi'],
   ['티스토리','http://web.u4bi.com'],
   ['페이스북','http://www.facebook.com/ymjcode'],
-  ['깃페이지','http://u4bi.github.io'],
+  ['코딩일기','http://u4bi.github.io'],
   ['로켓펀치','http://www.rocketpunch.com/@myungJ2EE'],
   ['링크드인','http://www.linkedin.com/in/myungj2ee'],
   ['유튜브','http://www.youtube.com/channel/UCg9KB52VF-B5MHFfBLAxmRA'],
