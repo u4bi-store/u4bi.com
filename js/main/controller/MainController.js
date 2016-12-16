@@ -14,6 +14,7 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
       $scope.borderFlag=true;
       $scope.minigameType='js-pingpong';
       $scope.showBtn = function(name){
+        if(name == 'teach') return window.open('https://www.inflearn.com/course/github-%EA%B8%B0%EB%B3%B8%EA%B8%B0-10%EB%B6%84/', '_blank');
         $scope.type=name;
         $location.hash('');
         $anchorScroll();
