@@ -9,7 +9,7 @@ function mouseover(){
 function musiccolor(){
     return function(x){
       var result = null;
-      x == '' ? result = '#9c9c9c' : result = '#6596eb';
+      x == '' ? result = '#9c9c9c' : result = '#2A65FF';
       return result;
     };
 }
@@ -17,7 +17,7 @@ function musiccolor(){
 function minigamecolor(){
     return function(x){
       var result = null;
-      x == '' ? result = '#9c9c9c' : result = '#00ced1';
+      x == '' ? result = '#9c9c9c' : result = '#2A65FF';
       return result;
     };
 }
@@ -38,7 +38,7 @@ function prnePagingColor(){
 function listPagingColor(){
     return function(x, page, len){
       if(page >= len) return '#9c9c9c';
-      if(x == page) return '#1e63d9';
+      if(x == page) return '#7A63EF';
     };
 }
 

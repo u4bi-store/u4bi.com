@@ -20,7 +20,25 @@ body{
   scrollbar-arrow-color: transparent;
   scrollbar-base-color: transparent;
   font-family:'NanumGothic';
-  background: url('../images/back_7.jpg') no-repeat fixed 0 0 / cover;
+  background-color:#1A1A1A;
+  /* background: url('../images/back_7.jpg') no-repeat fixed 0 0 / cover; */
+}
+
+#wrap{
+  position: absolute;
+  overflow-y: scroll;
+  width : 90%;
+  height : 90%;
+  left: 5%;
+  top: 5%;
+}
+#content{
+  position: absolute;
+  overflow-y: scroll;
+  width : 100%;
+  height : 100%;
+  left: 0;
+  top: 0;
 }
 
 h1{
@@ -85,7 +103,9 @@ h1{
   border-radius: 10px;
 }
 .btn.rank{
-  background-color: #4080ff;
+  background-color: rgba(0,0,0,0.1);
+  border-bottom:3px solid rgba(0,0,0,0.44);
+  border-radius: 10px;
 }
 .btn.rank.mobail{
   display:none;
@@ -102,7 +122,7 @@ h1{
   background-color: rgba(0, 206, 209, 1);
 }
 .btn.border{
-  background-color: rgba(100, 149, 237, 1);
+  background-color: #2A65FF;
   font-size:2.2rem;
   maring:0;
   padding:5px 7.5px 5px 7.5px;
@@ -116,14 +136,13 @@ h1{
 
 .btn.number:hover{
   border-bottom: 3px solid rgba(240, 248, 255, 1);
-}
-
-.btn.number:hover{
-  background:rgba(240, 248, 255, 0.2);
+  background:rgba(240, 248, 255, 0.2)
 }
 
 .btn.rank:hover{
   font-size:2.2rem;
+  border-bottom: 3px solid rgba(240, 248, 255, 1);
+  background:rgba(240, 248, 255, 0.2)
 }
 .btn.minigame:hover{
 }
