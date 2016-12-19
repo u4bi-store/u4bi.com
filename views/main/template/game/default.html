@@ -1,6 +1,6 @@
-<div id="game-notice">
-  <div class="game-style" id="border-game">
-    <div id="border-title">
+<span id="game-notice">
+  <span class="game-style" id="border-game">
+    <span id="border-title">
         <p>
         <button class="btn border" ng-click="borderTurn(false)" ng-style="{'background-color': (borderType | typePagingColor:false)}"><</button>
         <button class="btn border type" ng-click="borderReload()">{{border[borderType].name}}</button>
@@ -11,8 +11,8 @@
           <button class="btn border" ng-hide="borderFlag">수정</button>
           <button class="btn border" ng-hide="borderFlag">삭제</button>
         </p>
-    </div>
-    <div id="border-detail" ng-hide="borderFlag">
+    </span>
+    <span id="border-detail" ng-hide="borderFlag">
 <textarea readonly>
 [글번호] : {{detail[0].id}}
 [제목명] : {{list[detail[0].key].title}}
@@ -27,18 +27,18 @@
       <button class="btn border prne" ng-hide="borderFlag" ng-click="borderReload()">목록</button>
       <button class="btn border prne" ng-hide="borderFlag" ng-click="showDetail(detail[0].key+1, list[detail[0].key+1].id)" ng-style="{'background-color': (detail[0].key+1 | prnePagingColor:list.length)}">다음글</button>
     </p>
-    </div>
-    <div id="border-footer" ng-show="borderFlag" ng-init="showList(borderPage)">
-      <div id="border-list">
+    </span>
+    <span id="border-footer" ng-show="borderFlag" ng-init="showList(borderPage)">
+      <span id="border-list">
         <p ng-repeat="x in list" ng-click="showDetail($index, x.id)">
           <span>{{x.title}}</span>
           <span>{{x.writer}}</span>
         </p>
-      </div>
+      </span>
       <button class="btn border page" ng-click="showList(borderPage-1,true)" ng-style="{'background-color': (borderPage-2 | prnePagingColor)}"><</button>
       <button class="btn border page" ng-click="showList(borderPage)" ng-style="{'background-color': (currentPage | listPagingColor:borderPage)}">{{borderPage}}</button>
       <button class="btn border page" ng-click="showList(borderPage+1)" ng-style="{'background-color': (currentPage | listPagingColor:borderPage+1:listLen)}">{{borderPage+1}}</button>
       <button class="btn border page" ng-click="showList(borderPage+2)" ng-style="{'background-color': (borderPage+2 | prnePagingColor:listLen)}">></button>
-    </div>
-  </div>
-</div>
+    </span>
+  </span>
+</span>
