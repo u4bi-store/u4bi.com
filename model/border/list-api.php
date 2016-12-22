@@ -12,8 +12,8 @@ $typeName = ['자유자유','정보정보','생활생활','메모메모'];
 for($i=1; $i<$size; $i++){
   $low =$i-1;
   if($low < 40) $temp = 0;
-  else if($low < 45) $temp = 1;
-  else if($low < 75) $temp = 2;
+  else if($low < 50) $temp = 1;
+  else if($low < 70) $temp = 2;
   else if($low < 80) $temp = 3;
   
   $send = $typeName[$temp].' 좋은글'.$low.'좋은글';
