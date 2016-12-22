@@ -23,7 +23,7 @@ body{
   /* background-color:#1A1A1A; */
   background: url('../images/back_7.jpg') no-repeat fixed 0 0 / cover;
 }
-
+/* 
 #wrap{
   position: absolute;
   overflow-y: scroll;
@@ -39,7 +39,7 @@ body{
   height : 100%;
   left: 0;
   top: 0;
-}
+} */
 
 h1{
   color:#fff;
