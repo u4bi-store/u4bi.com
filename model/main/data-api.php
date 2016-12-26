@@ -37,7 +37,7 @@ $minigame = [
 $music = [
   ['편안한','_Ps8U_lhjPg?autoplay=1'],
   ['고요한','A81R-3lvYP8?autoplay=1'],
-  ['잔잔한',''],
+  ['잔잔한','YEsGIsJI3wE?autoplay=1'],
   ['신나는',''],
   ['열정적인',''],
   ['즐거운',''],
