@@ -11,7 +11,7 @@ $href = [
   ['로켓펀치','http://www.rocketpunch.com/@myungJ2EE'],
   ['링크드인','http://www.linkedin.com/in/myungj2ee'],
   ['유튜브','http://www.youtube.com/channel/UCg9KB52VF-B5MHFfBLAxmRA'],
-  ['웹프로필','http://u4bi.com']
+  ['웹프로필','https://u4bi-dev.github.io/u4bi-dev']
 ];
 
 $game = [
@@ -49,7 +49,7 @@ $music = [
   ['전투하는',''],
   ['씁쓸한',''],
   ['우울한',''],
-  ['화가나는',''],
+  ['안정되는','EsC4zTr77oI?autoplay=1'],
   ['클럽가는',''],
   ['힙클가는',''],
   ['베이퍼한','l6GktA3RYtw?list=RDl6GktA3RYtw&autoplay=1']
