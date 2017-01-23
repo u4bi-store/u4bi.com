@@ -6,7 +6,7 @@
   .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
   .dropdown:hover .btn.rank.web{display:block !important;}
   .over-border{line-height:150% !important;}
-  .btn.music{font-size:1rem;}
+  .btn.music{font-size:1.2rem;}
   #cont{  column-width:500px !important;}
   #over-logo{width:100%;}
   #border-list{width:100% !important; height: 65% !important; }
@@ -122,7 +122,7 @@ h1{
   background-color: rgba(0, 206, 209, 1);
 }
 .btn.border{
-  background-color: #2A65FF;
+  background-color: rgba( 255, 235, 205, 0.7);
   font-size:2.2rem;
   maring:0;
   padding:5px 7.5px 5px 7.5px;

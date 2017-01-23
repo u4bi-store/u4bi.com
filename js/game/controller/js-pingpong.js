@@ -33,8 +33,8 @@ function GameController($scope){
     game.scale.pageAlignVertically = true;
     //game.stage.backgroundColor = 'rgba(0,0,0,0.44)';
     
-    game.load.image('background', 'images/game/js-pingpong/sky.png');
-    game.load.image('paddle', 'images/game/js-pingpong/paddle.png');
+    game.load.image('background', 'images/game/js-pingpong/background-pingpong.jpg');
+    game.load.image('paddle', 'images/game/js-pingpong/ping-paddle.png');
     game.load.spritesheet('ball', 'images/game/js-pingpong/spritesheet.png', 25, 26);
     game.load.spritesheet('brick', 'images/game/js-pingpong/brick_spritesheet.png', 23, 27);
     game.load.spritesheet('button', 'images/game/js-pingpong/button.png', 120,40);
@@ -71,7 +71,7 @@ function GameController($scope){
     scoreText = game.add.text(5, 5, '점수 : 0', textStyle);
     livesText = game.add.text(game.world.width-5, 5, '목숨 : '+lives, textStyle);
     livesText.anchor.set(1,0);
-    lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.5, '목숨이 남아 있습니다. 클릭하시면 게임이 진행됩니다.', textStyle);
+    lifeLostText = game.add.text(game.world.width*0.5, game.world.height*0.6, '목숨이 남아 있습니다. 클릭하시면 게임이 진행됩니다.', textStyle);
     lifeLostText.anchor.set(0.5);
     lifeLostText.visible = false;
 
@@ -96,7 +96,7 @@ function GameController($scope){
         col: 7
       },
       offset: {
-        top: 20,
+        top: 50,
         left: 35
       },
       padding: 15
