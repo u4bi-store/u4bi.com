@@ -36,23 +36,23 @@ $minigame = [
 
 $music = [
   ['편안한','_Ps8U_lhjPg?autoplay=1'],
-  ['고요한','e_I_SwtrF3g?autoplay=1'],
+  ['고요한','aUYJlZiiyvE?autoplay=1'],
   ['잔잔한','YEsGIsJI3wE?autoplay=1'],
   ['신나는',''],
-  ['열정적인',''],
-  ['즐거운',''],
-  ['비가오는','BoCLdG2x594?autoplay=1'],
-  ['탐험하는',''],
-  ['모험하는',''],
-  ['도서관간','InZ_XAs0-nM?autoplay=1'],
-  ['급박해진',''],
-  ['전투하는',''],
+  ['활력든',''],
+  ['힘이난',''],
+  ['비오는','BoCLdG2x594?autoplay=1'],
+  ['탐험한',''],
+  ['모험한',''],
+  ['도서관','InZ_XAs0-nM?autoplay=1'],
+  ['루즈한',''],
+  ['고뇌한',''],
   ['씁쓸한',''],
   ['우울한',''],
-  ['안정되는','EsC4zTr77oI?autoplay=1'],
-  ['클럽가는',''],
-  ['힙클가는','casMZhtAQU8?autoplay=1'],
-  ['베이퍼한','l6GktA3RYtw?list=RDl6GktA3RYtw&autoplay=1']
+  ['안정된','EsC4zTr77oI?autoplay=1'],
+  ['클럽간',''],
+  ['힙클간','casMZhtAQU8?autoplay=1'],
+  ['퓨처한','l6GktA3RYtw?list=RDl6GktA3RYtw&autoplay=1']
 ];
 
 $border = [
