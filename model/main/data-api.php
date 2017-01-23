@@ -36,7 +36,7 @@ $minigame = [
 
 $music = [
   ['편안한','_Ps8U_lhjPg?autoplay=1'],
-  ['고요한','A81R-3lvYP8?autoplay=1'],
+  ['고요한','e_I_SwtrF3g?autoplay=1'],
   ['잔잔한','YEsGIsJI3wE?autoplay=1'],
   ['신나는',''],
   ['열정적인',''],
@@ -51,7 +51,7 @@ $music = [
   ['우울한',''],
   ['안정되는','EsC4zTr77oI?autoplay=1'],
   ['클럽가는',''],
-  ['힙클가는',''],
+  ['힙클가는','casMZhtAQU8?autoplay=1'],
   ['베이퍼한','l6GktA3RYtw?list=RDl6GktA3RYtw&autoplay=1']
 ];
 
