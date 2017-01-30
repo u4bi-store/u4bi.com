@@ -48,7 +48,7 @@ $music = [
   ['루즈한',''],
   ['고뇌한',''],
   ['씁쓸한',''],
-  ['우울한',''],
+  ['우울한','AjiDuZZ_DZU?autoplay=1'],
   ['안정된','EsC4zTr77oI?autoplay=1'],
   ['클럽간',''],
   ['힙클간','casMZhtAQU8?autoplay=1'],
