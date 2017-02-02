@@ -6,6 +6,7 @@
   #border-list{width:100% !important; height: 65% !important; }
   .btn.border.page{font-size:2rem !important;}
   .btn.border.prne{font-size:1.8rem !important;}
+  .border-date{display:none;}
 }
 
 @media (max-width: 860px){
@@ -16,6 +17,7 @@
   .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
   .dropdown:hover .btn.rank.web{display:block !important;}
   .btn.rank:hover{font-size:2.5rem;}
+  .border-hit{display:none;}
 }
 @media (min-width: 860px){
   .music-item{  column-width:200px !important;}
@@ -224,23 +226,26 @@ h1{
   font-size:1.7rem;
   background-color:rgba(0,0,0,0.1);
   color:#fff;
-  text-align:center;
   overflow-y: scroll;
 }
-#border-list p{
+
+#border-list table{
+  width:100%;
+}
+#border-list tr{
   border-bottom:1px solid rgba(240, 248, 255, 0.2);
 }
-#border-list p:hover{
+#border-list tr:hover{
   cursor:pointer;
   background:rgba(240, 248, 255, 0.2);
   font-weight:bold;
 } 
-#border-list p:active{
+#border-list tr:active{
   cursor:pointer;
   background:rgba(255, 20, 147, 1);
 }
 
-#border-list span{
+#border-list td{
   margin:5px;
 }
 
