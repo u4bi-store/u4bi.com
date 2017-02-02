@@ -1,10 +1,4 @@
-@media (max-width: 860px){
-  .btn.number.web, .btn.rank.web{display:none;}
-  #game-wrap, #game-notice{ height:auto !important;}
-  .btn.number.mobail, .btn.rank.mobail{display:block !important; width:90%; }
-  .btn.rank.mobail:hover{font-size:3rem;}
-  .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
-  .dropdown:hover .btn.rank.web{display:block !important;}
+@media (max-width: 560px){
   .over-border{line-height:150% !important;}
   .btn.music{font-size:1.2rem;}
   #cont{  column-width:500px !important;}
@@ -12,6 +6,19 @@
   #border-list{width:100% !important; height: 65% !important; }
   .btn.border.page{font-size:2rem !important;}
   .btn.border.prne{font-size:1.8rem !important;}
+}
+
+@media (max-width: 860px){
+  .btn.number.web, .btn.rank.web{display:none;}
+  #game-wrap, #game-notice{ height:auto !important;}
+  .btn.number.mobail, .btn.rank.mobail{display:block !important; width:90%; }
+  .btn.rank.mobail:hover{font-size:3rem;}
+  .btn.rank.mobail:active{font-size:5rem; transition:all 0.5s;}
+  .dropdown:hover .btn.rank.web{display:block !important;}
+  .btn.rank:hover{font-size:2.5rem;}
+}
+@media (min-width: 860px){
+  .music-item{  column-width:200px !important;}
 }
 
 ::-webkit-scrollbar {border: 0;}
@@ -140,7 +147,6 @@ h1{
 }
 
 .btn.rank:hover{
-  /* font-size:2.2rem; */
   border-bottom: 3px solid rgba(240, 248, 255, 1);
   background:rgba(173, 255, 47, 0.6);
 }
