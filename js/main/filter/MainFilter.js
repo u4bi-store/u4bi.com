@@ -9,7 +9,7 @@ function mouseover(){
 function musiccolor(){
     return function(x){
       var result = null;
-      x == '' ? result = '#9c9c9c' : result = '#CCBDA8';
+      x == '' ? result = 'rgba(220, 220, 220, 0.4)' : result = 'rgba(255, 20, 147, 0.4)';
       return result;
     };
 }
@@ -17,28 +17,28 @@ function musiccolor(){
 function minigamecolor(){
     return function(x){
       var result = null;
-      x == '' ? result = '#9c9c9c' : result = '#CCBDA8';
+      x == '' ? result = 'rgba(220, 220, 220, 0.4)' : result = 'rgba(255, 20, 147, 0.4)';
       return result;
     };
 }
 
 function typePagingColor(){
     return function(x,bool){
-      if(bool && x == 3 || !bool && x == 0) return '#9c9c9c';
+      if(bool && x == 3 || !bool && x == 0) return 'rgba(220, 220, 220, 0.4)';
     };
 }
 
 
 function prnePagingColor(){
     return function(x, len){
-      if(x == -1|| x >= len) return '#9c9c9c';
+      if(x == -1|| x >= len) return 'rgba(220, 220, 220, 0.4)';
     };
 }
 
 function listPagingColor(){
     return function(x, page, len){
-      if(page >= len) return '#9c9c9c';
-      if(x == page) return '#B59976';
+      if(page >= len) return 'rgba(220, 220, 220, 0.4)';
+      if(x == page) return 'rgba(255, 20, 147, 0.8)';
     };
 }
 
