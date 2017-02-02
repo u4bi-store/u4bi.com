@@ -105,6 +105,7 @@ h1{
   transition:all 0.1s;
   text-shadow: 0px -1.5px rgba(0,0,0,0.44);
   font-weight:bold;
+  outline: none !important;
 }
 .btn.number{
   background-color: rgba(0,0,0,0.1);
