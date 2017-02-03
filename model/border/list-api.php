@@ -16,7 +16,7 @@ for($i=1; $i<$size; $i++){
   else if($low < 70) $temp = 2;
   else if($low < 80) $temp = 3;
   
-  $send = $typeName[$temp].' 좋은글'.$low.'좋은글';
+  $send = $typeName[$temp].' 좋은글'.' 좋은글';
   $list[$low] = [$low, $temp, $send,'길동이',3,'2016/12/23/23:23'];
 }
 
