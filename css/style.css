@@ -24,12 +24,20 @@
 }
 
 ::-webkit-scrollbar {border: 0;}
-/* body */
-body{
+html{
+  scrollbar-3dLight-Color: transparent;
   scrollbar-arrow-color: transparent;
   scrollbar-base-color: transparent;
+  scrollbar-Face-Color: transparent;
+  scrollbar-Track-Color: transparent;
+  scrollbar-DarkShadow-Color: transparent;
+  scrollbar-Highlight-Color: transparent;
+  scrollbar-Shadow-Color: transparent;
+}
+
+/* body */
+body{
   font-family:'NanumGothic';
-  /* background-color:#1A1A1A; */
   background: url('../images/back_10.jpg') no-repeat fixed 0 0 / cover;
 }
 /* 
