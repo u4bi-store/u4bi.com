@@ -6,7 +6,6 @@ function MainController($scope, $anchorScroll, $location, $sce, MainService){
     function init(){
       $scope.name ='NECOP';
       $scope.tagnum = '3112';
-      $scope.type = 'music';
       
       console.log('ok 200');
       dataAPI();
