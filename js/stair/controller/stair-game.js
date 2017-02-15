@@ -2,14 +2,26 @@ app.controller('stair-game', StairController);
 
 function StairController($scope){
 
+    var score=0;
+
     var container = document.getElementById('stair-container');
     var camera, scene, renderer ;
-
     var geometry, material, mesh;
+    
+    var controlsEnabled = false;
     var controls;
 
     var objects = [];
     var raycaster;
+
+    var moveForward = false;
+    var moveBackward = false;
+    var moveLeft = false;
+    var moveRight = false;
+    var canJump = false;
+
+    var prevTime = performance.now();
+    var velocity = new THREE.Vector3();
 
     var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
     if (havePointerLock){
@@ -31,12 +43,51 @@ function StairController($scope){
         container.addEventListener('click', function (event){
 
             // 잠겨진 화면을 해제하도록 요청함
+            onWindowResize();
             element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
             element.requestPointerLock();
         }, false);
     }
 
+    var onKeyDown = function (event){
+        switch (event.keyCode){
+            case 87: // w
+                moveForward = true;
+                break;
+            case 65: // a
+                moveLeft = true; break;
+            case 83: // s
+                moveBackward = true;
+                break;
+            case 68: // d
+                moveRight = true;
+                break;
+            case 16: // 스페
+                if (canJump === true) velocity.y += 350;
+                canJump = false;
+                break;
+        }
+    };
+    var onKeyUp = function (event){
+        switch(event.keyCode){
+            case 87: // w
+                moveForward = false;
+                break;
+            case 65: // a
+                moveLeft = false;
+                break;
+            case 83: // s
+                moveBackward = false;
+                break;
+            case 68: // d
+                moveRight = false;
+                break;
+        }
+    };
 
+    document.addEventListener('keydown', onKeyDown, false);
+    document.addEventListener('keyup', onKeyUp, false);
+    
     init();
     render();
 
@@ -55,6 +106,7 @@ function StairController($scope){
         controls = new THREE.PointerLockControls(camera);
         scene.add(controls.getObject());
 
+        raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, - 1, 0), 0, 10);
 
         geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
         geometry.rotateX(- Math.PI / 2);
@@ -88,6 +140,58 @@ function StairController($scope){
 
     function render(){
         requestAnimationFrame(render);
+
+        if (controlsEnabled){
+            raycaster.ray.origin.copy(controls.getObject().position);
+            raycaster.ray.origin.y -= 10;
+
+            var intersections = raycaster.intersectObjects(objects);
+
+            var isOnObject = intersections.length > 0;
+
+            var time = performance.now();
+            var delta = (time - prevTime) / 1000;
+
+            velocity.x -= velocity.x * 10.0 * delta;
+            velocity.z -= velocity.z * 10.0 * delta;
+
+            velocity.y -= 9.8 * 100.0 * delta;
+
+            if (moveForward) velocity.z -= 400.0 * delta;
+            if (moveBackward) velocity.z += 400.0 * delta;
+
+            if (moveLeft) velocity.x -= 400.0 * delta;
+            if (moveRight) velocity.x += 400.0 * delta;
+
+            if (isOnObject === true){
+                velocity.y = Math.max(0, velocity.y);
+
+                score = intersections[0].object.id-7;
+                objects[score].material.color.set( 0x0000ff);
+                if(score+1 != objects.length)objects[score+1].material.color.set( 0xEA4335);
+                if(score-1 != -1)objects[score-1].material.color.set( 0xEA4335);
+                // scoreText.innerHTML="현재 상황 : "+score+"계단";
+                
+                canJump = true;
+            }
+
+            controls.getObject().translateX(velocity.x * delta);
+            controls.getObject().translateY(velocity.y * delta);
+            controls.getObject().translateZ(velocity.z * delta);
+
+            if (controls.getObject().position.y < 10){
+                if(score > 37){
+                    alert('죽음! 당신의 스코어는 '+score+'입니다.');
+                    window.location.replace(window.location.href);
+                }
+                velocity.y = 0;
+                controls.getObject().position.y = 10;
+                canJump = true;
+            }
+
+            prevTime = time;
+
+        }
 
         renderer.render(scene, camera);
     }
