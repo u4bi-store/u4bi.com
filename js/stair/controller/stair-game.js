@@ -100,9 +100,11 @@ function StairController($scope){
     render();
 
     function init(){
-
+        velocity.x -= 15;
+        velocity.z -= 20;
+        
         camera = new THREE.PerspectiveCamera(75, container.offsetWidth, (window.innerHeight-70), 1, 1000);
-
+        
 
         scene = new THREE.Scene();
         scene.fog = new THREE.Fog(0xffffff, 0, 750);
