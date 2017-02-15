@@ -2,9 +2,12 @@ app.controller('stair-game', StairController);
 
 function StairController($scope){
 
-    var score=0;
+    var stair=0;
 
     var container = document.getElementById('stair-container');
+    var stairText = document.getElementById('stairText');
+    var comment = document.getElementById('container-content');
+
     var camera, scene, renderer ;
     var geometry, material, mesh;
     
@@ -41,7 +44,7 @@ function StairController($scope){
         document.addEventListener('webkitpointerlockchange', pointerlockchange, false);
 
         container.addEventListener('click', function (event){
-
+            comment.style.display = 'none';
             // 잠겨진 화면을 해제하도록 요청함
             onWindowResize();
             element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
@@ -63,8 +66,10 @@ function StairController($scope){
                 moveRight = true;
                 break;
             case 16: // 스페
-                if (canJump === true) velocity.y += 350;
-                canJump = false;
+                if (canJump === true){
+                    velocity.y += 350;
+                    canJump = false;
+                }
                 break;
         }
     };
@@ -108,16 +113,10 @@ function StairController($scope){
 
         raycaster = new THREE.Raycaster(new THREE.Vector3(), new THREE.Vector3(0, - 1, 0), 0, 10);
 
-        geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
-        geometry.rotateX(- Math.PI / 2);
         material = new THREE.MeshBasicMaterial({ vertexColors: THREE.VertexColors });
-        material.color.set(0x34A853);
-        mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
 
-        /* 계단 */
         geometry = new THREE.BoxGeometry(20, 1, 20);
-        for (var i = 1; i < 100; i ++){
+        for (var i = 1; i < 500; i ++){
             material = new THREE.MeshPhongMaterial({ specular: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors });
             var mesh = new THREE.Mesh( geometry, material );
             mesh.position.x = i*30;
@@ -125,7 +124,7 @@ function StairController($scope){
             mesh.position.z = i*10;
             scene.add( mesh );
 
-            material.color.set(0xEA4335);
+            material.color.set(0x6CC683);
             objects.push(mesh);
         }
 
@@ -164,13 +163,15 @@ function StairController($scope){
             if (moveRight) velocity.x += 400.0 * delta;
 
             if (isOnObject === true){
+                var stairSound = new Audio('./audio/game/stair/jump.mp3');
+                stairSound.play();
                 velocity.y = Math.max(0, velocity.y);
 
-                score = intersections[0].object.id-7;
-                objects[score].material.color.set( 0x0000ff);
-                if(score+1 != objects.length)objects[score+1].material.color.set( 0xEA4335);
-                if(score-1 != -1)objects[score-1].material.color.set( 0xEA4335);
-                // scoreText.innerHTML="현재 상황 : "+score+"계단";
+                stair = intersections[0].object.id-6;
+                objects[stair].material.color.set( 0xADFF2F);
+                if(stair+1 != objects.length)objects[stair+1].material.color.set(0x6CC683);
+                if(stair-1 != -1)objects[stair-1].material.color.set(0x6CC683);
+                stairText.innerHTML="현재 상황 : "+(stair+1)+"계단";
                 
                 canJump = true;
             }
@@ -180,10 +181,7 @@ function StairController($scope){
             controls.getObject().translateZ(velocity.z * delta);
 
             if (controls.getObject().position.y < 10){
-                if(score > 37){
-                    alert('죽음! 당신의 스코어는 '+score+'입니다.');
-                    window.location.replace(window.location.href);
-                }
+                if(stair > 10) stairText.innerHTML="당신의 최종 기록은 "+(stair+1)+"계단입니다.";
                 velocity.y = 0;
                 controls.getObject().position.y = 10;
                 canJump = true;

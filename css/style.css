@@ -258,7 +258,7 @@ h1{
   margin:5px;
 }
 
-#escape-content{
+#container-content{
   position: absolute;
   width : 89.7%;
   height : 200px;
@@ -266,7 +266,17 @@ h1{
   background: rgba(0,0,0,0.6);
 }
 
-#escape-content span{
+#container-content span{
   font-size:4rem;
   font-weight:bold;
+  color: #fff;
+}
+
+.stair-info {
+    position: absolute;
+    width: 300px;
+    bottom:0;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
 }
