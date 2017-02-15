@@ -2,7 +2,7 @@ app.controller('stair-game', StairController);
 
 function StairController($scope){
 
-  var container;
+  var container = document.getElementById('stair-container');
   var camera, scene, renderer ;
 
   var geometry, material, mesh;
@@ -10,17 +10,43 @@ function StairController($scope){
 
   var raycaster;
 
+  var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
+  if (havePointerLock){
+
+      var element = document.body;
+      var pointerlockchange = function (event){
+
+          if (document.pointerLockElement === element || document.mozPointerLockElement === element || document.webkitPointerLockElement === element){
+              controlsEnabled = true;
+              controls.enabled = true;
+          } else controls.enabled = false;
+      };
+
+      // 화면이 잠겨있을 때 반응하는 이벤트리스너
+      document.addEventListener('pointerlockchange', pointerlockchange, false);
+      document.addEventListener('mozpointerlockchange', pointerlockchange, false);
+      document.addEventListener('webkitpointerlockchange', pointerlockchange, false);
+
+      container.addEventListener('click', function (event){
+
+          // 잠겨진 화면을 해제하도록 요청함
+          element.requestPointerLock = element.requestPointerLock || element.mozRequestPointerLock || element.webkitRequestPointerLock;
+          element.requestPointerLock();
+      }, false);
+  }
+
+
    init();
    render();
 
    function init(){
 
-      container = document.getElementById('stair-container');
       camera = new THREE.PerspectiveCamera(75, container.offsetWidth, (window.innerHeight-70), 1, 1000);
      
 
       scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0xffffff, 0, 750);
+
       controls = new THREE.PointerLockControls(camera);
       scene.add(controls.getObject());
 
