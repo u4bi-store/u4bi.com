@@ -7,6 +7,9 @@ function StairController($scope){
     var container = document.getElementById('stair-container');
     var stairText = document.getElementById('stairText');
     var comment = document.getElementById('container-content');
+    var scream = document.getElementById('stair-scream');
+    var screamSound = new Audio('./audio/game/stair/scream.mp3');
+    var screamNum = Math.floor( (Math.random() * (50 - 30 + 1)) + 30);
 
     var camera, scene, renderer ;
     var geometry, material, mesh;
@@ -116,7 +119,7 @@ function StairController($scope){
         material = new THREE.MeshBasicMaterial({ vertexColors: THREE.VertexColors });
 
         geometry = new THREE.BoxGeometry(20, 1, 20);
-        for (var i = 1; i < 150; i ++){
+        for (var i = 1; i < 80; i ++){
             material = new THREE.MeshPhongMaterial({ specular: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors });
             var mesh = new THREE.Mesh( geometry, material );
             mesh.position.x = i*30;
@@ -163,6 +166,12 @@ function StairController($scope){
             if (moveRight) velocity.x += 400.0 * delta;
 
             if (isOnObject === true){
+
+                if(stair == screamNum){
+                    scream.style.display = 'inline';
+                    screamSound.play();
+                    screamSound.loop();
+                }
 
                 if(stair != intersections[0].object.id-6){
                     var stairSound = new Audio('./audio/game/stair/jump.mp3');
