@@ -8,6 +8,7 @@ function StairController($scope){
   var geometry, material, mesh;
   var controls;
 
+  var objects = [];
   var raycaster;
 
   var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
@@ -46,7 +47,7 @@ function StairController($scope){
 
       scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0xffffff, 0, 750);
-
+      
       controls = new THREE.PointerLockControls(camera);
       scene.add(controls.getObject());
 
@@ -57,6 +58,20 @@ function StairController($scope){
       material.color.set(0x34A853);
       mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
+
+      /* 계단 */
+      geometry = new THREE.BoxGeometry(20, 1, 20);
+      for (var i = 1; i < 100; i ++){
+          material = new THREE.MeshPhongMaterial({ specular: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors });
+          var mesh = new THREE.Mesh( geometry, material );
+          mesh.position.x = i*30;
+          mesh.position.y = i*10;
+          mesh.position.z = i*10;
+          scene.add( mesh );
+
+          material.color.set(0xEA4335);
+          objects.push(mesh);
+      }
       
       renderer = new THREE.WebGLRenderer();
       renderer.setClearColor(0xED399F);
