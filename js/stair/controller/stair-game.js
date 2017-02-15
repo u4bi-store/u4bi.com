@@ -2,7 +2,7 @@ app.controller('stair-game', StairController);
 
 function StairController($scope){
 
-    var stair=0;
+    var stair=-1;
 
     var container = document.getElementById('stair-container');
     var stairText = document.getElementById('stairText');
@@ -116,7 +116,7 @@ function StairController($scope){
         material = new THREE.MeshBasicMaterial({ vertexColors: THREE.VertexColors });
 
         geometry = new THREE.BoxGeometry(20, 1, 20);
-        for (var i = 1; i < 500; i ++){
+        for (var i = 1; i < 150; i ++){
             material = new THREE.MeshPhongMaterial({ specular: 0xffffff, shading: THREE.FlatShading, vertexColors: THREE.VertexColors });
             var mesh = new THREE.Mesh( geometry, material );
             mesh.position.x = i*30;
@@ -163,10 +163,13 @@ function StairController($scope){
             if (moveRight) velocity.x += 400.0 * delta;
 
             if (isOnObject === true){
-                var stairSound = new Audio('./audio/game/stair/jump.mp3');
-                stairSound.play();
-                velocity.y = Math.max(0, velocity.y);
 
+                if(stair != intersections[0].object.id-6){
+                    var stairSound = new Audio('./audio/game/stair/jump.mp3');
+                    stairSound.play();
+                }
+
+                velocity.y = Math.max(0, velocity.y);
                 stair = intersections[0].object.id-6;
                 objects[stair].material.color.set( 0xADFF2F);
                 if(stair+1 != objects.length)objects[stair+1].material.color.set(0x6CC683);
