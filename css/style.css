@@ -23,18 +23,6 @@
   .music-item{  column-width:200px !important;}
 }
 
-::-webkit-scrollbar {border: 0;}
-html{
-  scrollbar-3dLight-Color: transparent;
-  scrollbar-arrow-color: transparent;
-  scrollbar-base-color: transparent;
-  scrollbar-Face-Color: transparent;
-  scrollbar-Track-Color: transparent;
-  scrollbar-DarkShadow-Color: transparent;
-  scrollbar-Highlight-Color: transparent;
-  scrollbar-Shadow-Color: transparent;
-}
-
 /* body */
 body{
   font-family:'NanumGothic';
