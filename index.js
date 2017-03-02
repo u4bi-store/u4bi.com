@@ -10,6 +10,6 @@ app.config(function($routeProvider) {
   .when('/main', {
     templateUrl: './views/main/main.html',
     controller: 'MainController',
-    css : './css/style.css'
+    css : ['css/common.css' , './css/style.css']
   });
 });
