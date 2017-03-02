@@ -55,7 +55,28 @@ body {
 }
 
 img{
+  position: relative;
   margin-top:20px;
   width: 50%;
   height: 50%;
+  -webkit-animation-name: logo;
+  -webkit-animation-duration: 3s;
+  animation-name: logo;
+  animation-duration: 3s;
+  animation-iteration-count : infinite;
+}
+
+img:hover{
+}
+
+@-webkit-keyframes logo {
+    0% {left:0px; top:0px;}
+    50%   {left:0px; top:100px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes logo {
+    0% {left:0px; top:0px;}
+    50%   {left:0px; top:100px;}
+    100% {left:0px; top:0px;}
 }
