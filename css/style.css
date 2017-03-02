@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
 @media (max-width: 560px){
   .over-border{line-height:150% !important;}
   .btn.music{font-size:1.2rem;}
@@ -25,7 +27,7 @@
 
 /* body */
 body{
-  font-family:'NanumGothic';
+  font-family: 'Nanum Gothic Coding', serif;
   background: url('../images/back_10.jpg') no-repeat fixed 0 0 / cover;
 }
 /* 
